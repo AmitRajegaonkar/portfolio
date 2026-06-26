@@ -24,14 +24,40 @@ const spaceMono = Space_Mono({
   display: "swap",
 });
 
+// Resolve the canonical site URL: an explicit env var, the Vercel-provided
+// deployment URL, or localhost in dev. Used to make OG/social URLs absolute.
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? process.env.NEXT_PUBLIC_SITE_URL
+  : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Amit Rajegaonkar — Hardware + Software Builder",
   description:
     "Embedded hardware and IoT engineer. Face recognition for MP Police, a live RFID system, and a macropad with paying customers. I build hardware that ships.",
+  keywords: [
+    "Amit Rajegaonkar",
+    "embedded engineer",
+    "IoT",
+    "hardware",
+    "ESP32",
+    "RP2040",
+    "firmware",
+    "PCB design",
+  ],
+  authors: [{ name: "Amit Rajegaonkar" }],
   openGraph: {
     title: "Amit Rajegaonkar — Hardware + Software Builder",
     description: "I build hardware that ships.",
     type: "website",
+    url: siteUrl,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Amit Rajegaonkar — Hardware + Software Builder",
+    description: "I build hardware that ships.",
   },
 };
 
