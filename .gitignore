@@ -1,0 +1,18 @@
+/node_modules
+/.next/
+/out/
+/build
+.DS_Store
+*.pem
+npm-debug.log*
+.env*.local
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+
+# Source media not used on the site. Only the single-digit numbered images
+# (1.jpg, 2.png, ...) in each project folder are referenced in the code;
+# the raw photos, screen recordings, and .mp4 demo files are kept locally
+# but excluded from git (some are >100MB and GitHub rejects them).
+/public/imgs/*/*
+!/public/imgs/*/[0-9].*
