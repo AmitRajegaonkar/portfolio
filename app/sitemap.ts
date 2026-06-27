@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/lib/projects";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ? process.env.NEXT_PUBLIC_SITE_URL
-  : process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.NODE_ENV === "production"
+    ? "https://amitbuilds.works"
+    : "http://localhost:3000");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

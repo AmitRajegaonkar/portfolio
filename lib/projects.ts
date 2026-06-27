@@ -124,7 +124,7 @@ export const projects: Project[] = [
       "/imgs/MALLBOT/2.jpg",
     ],
     videos: ["https://youtube.com/shorts/jWcWz5S0oS0?feature=share"],
-    github: "", // paste GitHub repo link here
+    github: "https://github.com/AmitRajegaonkar/bazaarbot", // paste GitHub repo link here
     featured: false,
   },
   {

@@ -4,6 +4,7 @@ import { Stats } from "@/components/stats";
 import { Experience } from "@/components/experience";
 import { Skills } from "@/components/skills";
 import { About } from "@/components/about";
+import { BeyondCode } from "@/components/beyond-code";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { ProjectCard } from "@/components/project-card";
@@ -33,12 +34,28 @@ export default function Home() {
                 <ProjectCard project={project} index={i} />
               </Reveal>
             ))}
+
+            {/* Coming soon placeholder — fills the trailing grid cell */}
+            <Reveal delay={0.1}>
+              <div className="flex h-full min-h-[260px] flex-col items-center justify-center rounded-lg border border-dashed border-border p-8 text-center">
+                <p className="font-mono text-sm text-accent">
+                  {"// coming soon"}
+                </p>
+                <p className="mt-3 font-heading text-2xl font-semibold tracking-tight text-foreground">
+                  More builds in progress.
+                </p>
+                <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">
+                  Always making something. The next one lands here.
+                </p>
+              </div>
+            </Reveal>
           </div>
         </section>
 
         <Experience />
         <Skills />
         <About />
+        <BeyondCode />
         <Contact />
       </main>
       <Footer />

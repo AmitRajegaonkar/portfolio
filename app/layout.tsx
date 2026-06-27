@@ -24,13 +24,15 @@ const spaceMono = Space_Mono({
   display: "swap",
 });
 
-// Resolve the canonical site URL: an explicit env var, the Vercel-provided
-// deployment URL, or localhost in dev. Used to make OG/social URLs absolute.
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ? process.env.NEXT_PUBLIC_SITE_URL
-  : process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000";
+// Resolve the canonical site URL: an explicit env var override, otherwise the
+// real custom domain in production and localhost in dev. Used to make OG/social
+// URLs absolute. (We avoid VERCEL_URL here so canonical links use the custom
+// domain, not the *.vercel.app preview/production URL.)
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.NODE_ENV === "production"
+    ? "https://amitbuilds.works"
+    : "http://localhost:3000");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

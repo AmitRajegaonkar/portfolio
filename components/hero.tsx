@@ -14,6 +14,20 @@ const badges = [
   "Active Business",
 ];
 
+// Hero tagline — swap to "B" to use the staccato version.
+const HERO_TAGLINE: "A" | "B" = "A";
+
+const taglines = {
+  A: {
+    lead: "I build hardware people actually use.",
+    body: "Face recognition for MP Police, a live RFID system in my college, and a macropad with real, paying customers to prove it.",
+  },
+  B: {
+    lead: "Deployed for MP Police. Running in my college. Sold to real customers.",
+    body: "Three products people depend on — not three lines on a resume.",
+  },
+};
+
 function scrollToId(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 }
@@ -66,14 +80,14 @@ export function Hero() {
             <span className="text-accent">I Build Hardware That Ships.</span>
           </motion.h1>
 
-          <motion.p
-            variants={item}
-            className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
-          >
-            Face recognition deployed for MP Police. RFID system running live in
-            my college. A macropad better than anything on the market — with
-            paying customers to prove it.
-          </motion.p>
+          <motion.div variants={item} className="mt-8 max-w-2xl">
+            <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">
+              {taglines[HERO_TAGLINE].lead}
+            </p>
+            <p className="mt-2 text-base leading-relaxed text-muted-foreground sm:text-lg">
+              {taglines[HERO_TAGLINE].body}
+            </p>
+          </motion.div>
 
           <motion.div variants={item} className="mt-8 flex flex-wrap gap-2">
             {badges.map((b) => (
@@ -129,7 +143,8 @@ export function Hero() {
             {/* subtle accent frame accent */}
             <div className="pointer-events-none absolute inset-0 rounded-lg ring-1 ring-inset ring-accent/10" />
           </div>
-          <span className="absolute -bottom-3 left-4 bg-background px-2 font-mono text-xs text-accent">
+          {/* Mobile: centered line under the photo. Desktop: corner tab. */}
+          <span className="mt-3 block text-center font-mono text-xs text-accent md:absolute md:-bottom-3 md:left-4 md:mt-0 md:bg-background md:px-2 md:text-left">
             {"// solapur → mumbai"}
           </span>
         </motion.div>

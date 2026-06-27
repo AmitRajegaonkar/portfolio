@@ -16,3 +16,5 @@ next-env.d.ts
 # but excluded from git (some are >100MB and GitHub rejects them).
 /public/imgs/*/*
 !/public/imgs/*/[0-9].*
+# The "Beyond Code" gallery uses every image in its folder, so track them all.
+!/public/imgs/Beyond Code/*

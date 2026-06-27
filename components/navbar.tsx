@@ -16,6 +16,7 @@ const links = [
   { label: "Experience", href: "experience" },
   { label: "Skills", href: "skills" },
   { label: "About", href: "about" },
+  { label: "Beyond", href: "beyond" },
   { label: "Contact", href: "contact" },
 ];
 
@@ -73,7 +74,7 @@ export function Navbar() {
           }}
           className="font-mono text-sm font-bold text-accent"
         >
-          {"// amit.dev"}
+          {"// amitbuilds.works"}
         </a>
 
         {/* Desktop nav */}

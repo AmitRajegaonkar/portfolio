@@ -23,18 +23,19 @@ export function About() {
           <Reveal>
             <div className="space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
               <p>
-                I&apos;m a final year engineering student from Solapur who builds
-                hardware products that real people use. Not just projects. Real
-                deployments.
+                I&apos;m a final year engineering student from Solapur. I build
+                hardware because I can&apos;t stop — every gap I notice becomes a
+                project I can&apos;t leave alone until it works.
               </p>
               <p>
-                I don&apos;t build things to add them to a resume. I build them
-                because I can&apos;t not. Every project started because something
-                annoyed me or I saw a gap and couldn&apos;t leave it alone.
+                I don&apos;t separate learning from building. The 3D printer
+                taught me manufacturing. The macropad taught me that firmware is
+                the easy part. The deployments taught me that real users break
+                things in ways you never imagine at your desk.
               </p>
               <p className="text-foreground">
-                Looking for an internship at an early-stage hardware startup
-                where the work is real and I&apos;m useful from day one.
+                I&apos;m looking for an early-stage hardware startup where the
+                work is real from day one. Not a guided internship. A real one.
               </p>
             </div>
           </Reveal>
