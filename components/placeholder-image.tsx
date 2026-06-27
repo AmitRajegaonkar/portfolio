@@ -9,6 +9,11 @@ interface PlaceholderImageProps {
   label?: string;
   className?: string;
   priority?: boolean;
+  /**
+   * Responsive `sizes` hint so next/image serves a correctly-scaled variant
+   * instead of a full-width one. Defaults to a half-width layout.
+   */
+  sizes?: string;
 }
 
 // 1x1 dark pixel used as the blur placeholder until real photos are added.
@@ -26,6 +31,7 @@ export function PlaceholderImage({
   label,
   className,
   priority,
+  sizes = "(max-width: 768px) 100vw, 50vw",
 }: PlaceholderImageProps) {
   return (
     <div
@@ -43,8 +49,10 @@ export function PlaceholderImage({
           fill
           placeholder="blur"
           blurDataURL={BLUR}
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes={sizes}
+          quality={70}
           priority={priority}
+          loading={priority ? undefined : "lazy"}
           className="object-cover"
         />
       ) : (

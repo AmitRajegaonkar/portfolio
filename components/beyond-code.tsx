@@ -109,6 +109,7 @@ export function BeyondCode() {
                 src={m.src}
                 alt={m.title}
                 label={m.title}
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="aspect-[4/3] w-full rounded-none border-0 transition-transform duration-500 group-hover:scale-105"
               />
               {/* Caption overlay */}

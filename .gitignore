@@ -18,3 +18,6 @@ next-env.d.ts
 !/public/imgs/*/[0-9].*
 # The "Beyond Code" gallery uses every image in its folder, so track them all.
 !/public/imgs/Beyond Code/*
+
+# Local-only backup of original (uncompressed) images.
+/public/imgs_original/
